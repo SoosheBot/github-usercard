@@ -22,7 +22,7 @@ function cardCreator(data){
   const userName = document.createElement('p');
   const location = document.createElement('p');
   const profile = document.createElement('p');
-  const profileURL = document.createElement('a');
+  const profileLink = document.createElement('a');
   const followers = document.createElement('p');
   const following = document.createElement('p');
   const bio = document.createElement('p');
@@ -35,28 +35,29 @@ function cardCreator(data){
   userName.classList.add('username');
 
 
-//append -- set structure
+//set the data
+  userImage.src = `${data.avatar_url}`;
+  name.textContent = `Name: ${data.name}`;
+  userName.textContent = `Username: ${data.login}`;
+  location.textContent = `Location: ${data.location}`;
+  profile.textContent = `Profile: ` 
+  profileLink.href = data.html_url;
+  profileLink.textContent = data.html_url;
+  followers.textContent = `Followers: ${data.followers}`;
+  following.textContent = `Following: ${data.following}`;
+  bio.textContent = `Bio: ${data.bio}`;
+
+  //append -- set structure
   card.appendChild(userImage);
   card.appendChild(cardInfo);
   cardInfo.appendChild(name);
   cardInfo.appendChild(userName);
   cardInfo.appendChild(location);
   cardInfo.appendChild(profile);
-  cardInfo.appendChild(profileURL);
+  profile.appendChild(profileLink);
   cardInfo.appendChild(followers);
   cardInfo.appendChild(following);
   cardInfo.appendChild(bio);
-
-//set the data
-  userImage.src = `${data.avatar_url}`;
-  name.textContent = `Name: ${data.name}`;
-  userName.textContent = `Username: ${data.login}`;
-  location.textContent = `Location: ${data.location}`;
-  profile.textContent = `Profile: ${data.html_url}` 
-  profileURL.href = `${data.html_url}`;
-  followers.textContent = `Followers: ${data.followers}`;
-  following.textContent = `Following: ${data.following}`;
-  bio.textContent = `Bio: ${data.bio}`;
 
   return card;
 }
