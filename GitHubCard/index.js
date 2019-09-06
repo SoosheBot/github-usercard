@@ -34,7 +34,6 @@ function cardCreator(data){
   name.classList.add('name');
   userName.classList.add('username');
 
-
 //set the data
   userImage.src = `${data.avatar_url}`;
   name.textContent = `Name: ${data.name}`;
@@ -47,17 +46,17 @@ function cardCreator(data){
   following.textContent = `Following: ${data.following}`;
   bio.textContent = `Bio: ${data.bio}`;
 
-  //append -- set structure
-  card.appendChild(userImage);
-  card.appendChild(cardInfo);
-  cardInfo.appendChild(name);
-  cardInfo.appendChild(userName);
-  cardInfo.appendChild(location);
-  cardInfo.appendChild(profile);
-  profile.appendChild(profileLink);
-  cardInfo.appendChild(followers);
-  cardInfo.appendChild(following);
-  cardInfo.appendChild(bio);
+   //append -- set structure
+   card.appendChild(userImage);
+   card.appendChild(cardInfo);
+   cardInfo.appendChild(name);
+   cardInfo.appendChild(userName);
+   cardInfo.appendChild(location);
+   cardInfo.appendChild(profile);
+   profile.appendChild(profileLink);
+   cardInfo.appendChild(followers);
+   cardInfo.appendChild(following);
+   cardInfo.appendChild(bio);
 
   return card;
 }
